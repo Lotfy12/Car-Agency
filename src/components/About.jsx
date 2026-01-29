@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import about from "../../public/cars/aboutCar.pnggit init";
+import about from "../../public/cars/aboutCar.png";
 import Title from "./common/Title";
 
 function About({ forwardRef }) {
