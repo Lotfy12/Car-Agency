@@ -6,12 +6,14 @@ const textColor = { color: "#741906" };
 function Cars({ forwardRef }) {
   return (
     <div
-      className="mx-9 max-w-[1300px] h-[100vh]"
+      className="px-4 py-16 mx-auto w-full max-w-[1300px] min-h-screen"
       id="cars"
       ref={forwardRef}
     >
       <Title title="cars" subtitle="cars" style={textColor} />
-      <CarsItems />
+      <div className="w-full mt-8">
+        <CarsItems />
+      </div>
     </div>
   );
 }

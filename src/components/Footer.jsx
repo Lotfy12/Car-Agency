@@ -9,39 +9,41 @@ import up from "../../public/footer/up-arrow.png";
 
 function Footer({ forwardRef }) {
   return (
-    <footer id="contact" ref={forwardRef}>
-      <div className="flex  h-[40vh] justify-evenly">
-        <form className="mx-9 mt-9  grid max-w-[1200px] justify-center  justify-items-center gap-9 text-center  grid-cols-3">
-          <div>
+    <footer id="contact" ref={forwardRef} className="relative">
+      <div className="flex h-auto min-h-[40vh] justify-center py-16">
+        <form className="mx-auto w-full px-6 max-w-[1200px] grid justify-center justify-items-center md:justify-items-start gap-12 text-center md:text-left grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-col items-center md:items-start">
             <HeaderFooter
               thirdHeader="YourCar"
               thirdParagraph="We are known for luxurious and premium chauffeur services worldwide. We are simply the best you can find."
             />
             <HeaderFooter thirdParagraph="We are dedicated to providing our customers with a first-class car buying, selling, and renting experience." />
           </div>
-          <div>
+          <div className="flex flex-col items-center md:items-start w-full">
             <HeaderFooter
               thirdHeader="News Letter"
               thirdParagraph="Subscribe to our newsletter for updates, news and exclusive offers"
             />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-3/5 px-4 py-3 border border-red-800 outline-none hover:outline-offset-0 hover:outline-red-800"
-            />
-            <label className="px-6 py-3 ml-3 bg-red-800 border text-slate-50 hover:bg-slate-50 hover:text-red-800 hover:duration-300">
-              subscribe
-            </label>
+            <div className="flex flex-col sm:flex-row items-center w-full mt-4 gap-4 sm:gap-0">
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full sm:w-3/5 px-4 py-3 border border-red-800 outline-none focus:outline-red-800"
+              />
+              <button type="submit" className="w-full sm:w-auto px-6 py-3 sm:-ml-1 bg-red-800 border border-red-800 font-bold text-slate-50 hover:bg-slate-50 hover:text-red-800 transition-colors duration-300">
+                Subscribe
+              </button>
+            </div>
           </div>
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <HeaderFooter thirdHeader="Contact" />
 
             {footerIconData.slice(0, 3).map((item, key) => (
-              <div key={key} className="flex py-3">
+              <div key={key} className="flex py-3 items-center">
                 <img
                   src={item.img}
                   alt={item.type}
-                  className="self-center mr-3"
+                  className="mr-4 object-contain w-6 h-6"
                 />
                 <p className="text-lg">{item.description}</p>
               </div>
@@ -50,20 +52,20 @@ function Footer({ forwardRef }) {
         </form>
       </div>
 
-      <div className="flex justify-center mt-0 border-b-4 border-b-red-800">
+      <div className="flex justify-center items-center gap-6 mt-8 pb-8 border-b-4 border-b-red-800 relative w-full">
         {footerIconData.slice(3, 6).map((item, key) => (
-          <div key={key} className="px-12 end-5 right-5 top-3/4 py-7">
-            <img src={item.img} alt={item.type} />
+          <div key={key} className="transition-transform hover:scale-110 cursor-pointer">
+            <img src={item.img} alt={item.type} className="w-8 h-8" />
           </div>
         ))}
         <Link
-          className="absolute duration-300 btn1 right-12 hover:-translate-y-4 "
+          className="absolute right-6 lg:right-12 -top-4 w-12 h-12 flex items-center justify-center bg-white shadow-lg rounded-full duration-300 hover:-translate-y-4 cursor-pointer"
           to="home"
           smooth={true}
           duration={800}
           delay={200}
         >
-          <img src={up} alt="up" />
+          <img src={up} alt="up" className="w-6 h-6 object-contain" />
         </Link>
       </div>
       <p className="pt-5 pb-8 text-2xl font-light text-center ">

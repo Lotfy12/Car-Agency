@@ -1,11 +1,11 @@
 function Title({ title, subtitle, style }) {
   return (
-    <div className="relative  my-6 text-center">
-      <h1 className="font-bold uppercase opacity-20 sm:text-7xl xl:text-9xl">
+    <div className="relative my-6 text-center w-full flex items-center justify-center">
+      <h1 className="font-bold uppercase opacity-20 text-5xl sm:text-7xl xl:text-9xl tracking-wider">
         {title}
       </h1>
       <h2
-        className="translate-x-(-50%) translate-y-(50%)  absolute bottom-0 left-1/3 transform text-4xl capitalize"
+        className="absolute inset-0 flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl capitalize font-bold pointer-events-none"
         style={style}
       >
         {subtitle}

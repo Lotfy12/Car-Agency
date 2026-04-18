@@ -8,14 +8,14 @@ function About({ forwardRef }) {
   return (
     <div
       id="about"
-      className="mx-8  mt-8 flex h-[100vh]	max-w-[1300px]	content-center  justify-center   space-x-9"
+      className="px-6 py-16 mx-auto sm:px-8 lg:px-12 max-w-[1300px] flex flex-col lg:flex-row min-h-screen items-center justify-center gap-10 lg:gap-16 pt-24"
       ref={forwardRef}
     >
-      <div className="relative ">
+      <div className="relative w-full lg:w-1/2">
         <header>
           <Title title="about us" subtitle="about" style={textColor} />
         </header>
-        <p className="para">
+        <p className="para text-base sm:text-lg">
           YourCar is a luxury car dealership that offers a personalized and
           first-class experience to its clients. Our team of experienced
           professionals is dedicated to providing exceptional service and
@@ -35,7 +35,7 @@ function About({ forwardRef }) {
           satisfied with their experience at YourCar.
         </p>
       </div>
-      <img src={about} alt="about car" className="h-full " />
+      <img src={about} alt="about car" className="w-full max-w-lg lg:max-w-full lg:w-1/2 object-cover" />
     </div>
   );
 }
